@@ -8,6 +8,7 @@ class window.HandView extends Backbone.View
   initialize: ->
     @collection.on 'add remove change', => @render()
     @render()
+    @collection.on 'bust', => console.log 'busted view'
 
   render: ->
     @$el.children().detach()
