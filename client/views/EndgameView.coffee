@@ -2,7 +2,7 @@ class window.EndgameView extends Backbone.View
 
   className: 'Endgame'
 
-  template: _.template '<div id = "<%= results %>"></div>'
+  template: _.template '<div id = "<%= results %>">end</div>'
 
   events:
     "click": ->

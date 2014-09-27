@@ -26,14 +26,12 @@ body{
 
 #win {
   position: absolute;
-  background-color: red;
   height: 100%;
   width: 100%;
 }
 
 #lose {
   position: absolute;
-  background-color: blue;
   height: 100%;
   width: 100%;
 }

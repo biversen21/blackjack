@@ -8,15 +8,19 @@ class window.App extends Backbone.Model
     @set 'endgame', new Endgame()
     @get('playerHand').on 'stood', =>
       @get('dealerHand').models[0].flip()
-      @get('dealerHand').hit()
+      if @get('dealerHand').scores() < 17
+        @get('dealerHand').hit()
+      else
+        @get('dealerHand').stand()
     @get('playerHand').on 'busted', =>
       @get('endgame').lose()
     @get('dealerHand').on 'busted', =>
       @get('endgame').win()
     @get('dealerHand').on 'stood', =>
-      if @get('playerHand').scores()[0] > @get('dealerHand').scores()[0]
+      console.log('stood')
+      if @get('playerHand').scores() > @get('dealerHand').scores()
         @get('endgame').win()
-      if @get('playerHand').scores()[0] < @get('dealerHand').scores()[0]
+      if @get('playerHand').scores() < @get('dealerHand').scores()
         @get('endgame').lose()
-      if @get('playerHand').scores()[0] is @get('dealerHand').scores()[0]
+      if @get('playerHand').scores() is @get('dealerHand').scores()
         @get('endgame').pushed()
