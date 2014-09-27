@@ -2,16 +2,23 @@ body{
   background-image: url('../img/table-felt.jpg');
 }
 
+.covered img {
+  display: none;
+}
+
+
+
+.card {
+  float: left;
+  height:167px;
+  width: 120px;
+  margin: 5px;
+
+}
+
 .covered {
   background-image: url('../img/card-back.png');
 }
-
-.card {
-  background-image: url();
-  float: left;
-  border: solid 1px black;
-}
-
 
 .hand {
   overflow: auto;
