@@ -6,14 +6,11 @@ body{
   display: none;
 }
 
-
-
 .card {
   float: left;
   height:167px;
   width: 120px;
   margin: 5px;
-
 }
 
 .covered {
@@ -24,14 +21,36 @@ body{
   overflow: auto;
 }
 
-#win {
+#newgame {
   position: absolute;
-  height: 100%;
-  width: 100%;
+  border: 5px solid black;
+  z-index: 2;
 }
 
-#lose {
+#win{
   position: absolute;
   height: 100%;
   width: 100%;
+  border: 5px solid black;
 }
+
+#lose{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 5px solid black;
+}
+
+#push{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 5px solid black;
+}
+
+
+/*#bjChecker{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}*/
