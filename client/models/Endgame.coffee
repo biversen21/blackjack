@@ -1,4 +1,16 @@
 class window.Endgame extends Backbone.Model
 
-  initialize: ->
-    console.log 'Endgame model'
+  win: ->
+    @set 'results', 'win'
+    @endgame()
+
+  lose: ->
+    @set 'results', 'lose'
+    @endgame()
+
+  pushed: ->
+    @set 'results', 'push'
+    @endgame()
+
+  endgame: ->
+    new EndgameView({model: @})

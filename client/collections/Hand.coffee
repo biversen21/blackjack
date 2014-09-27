@@ -5,27 +5,21 @@ class window.Hand extends Backbone.Collection
   initialize: (array, @deck, @isDealer) ->
 
   hit: ->
-    if @scores()[0] <22 # or not stand
+    if @scores()[0] < 22 # or not stand
       @add(@deck.pop()).last()
     if @scores()[0] > 21
-      @trigger('busted',@)
-      alert 'BUSTED! New game?'
-    if @isDealer & @scores()[0] < 17
-      @hit()
-
-  #dealerHit: ->
+      @trigger('busted', @)
+    else
+      if @isDealer & @scores()[0] < 17
+        @hit()
+      else
+        if @isDealer
+          @trigger('stood', @)
 
   stand: ->
-    console.log 'stand'
-    # stop player hit
-    # trigger dealer hit
     @trigger 'stood', @
 
-
   scores: ->
-    # The scores are an array of potential scores.
-    # Usually, that array contains one element. That is the only score.
-    # when there is an ace, it offers you two scores - the original score, and score + 10.
     hasAce = @reduce (memo, card) ->
       memo or card.get('value') is 1
     , false

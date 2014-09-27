@@ -1,16 +1,32 @@
-.card {
-  float: left;
-  border: solid 1px black;
-  width: 100px;
-  border-radius: 5px;
-  height: 140px;
-  margin-right: 20px;
+body{
+  background-image: url('../img/table-felt.jpg');
 }
 
 .covered {
-  background-color: black;
+  background-image: url('../img/card-back.png');
 }
+
+.card {
+  background-image: url();
+  float: left;
+  border: solid 1px black;
+}
+
 
 .hand {
   overflow: auto;
+}
+
+#win {
+  position: absolute;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+}
+
+#lose {
+  position: absolute;
+  background-color: blue;
+  height: 100%;
+  width: 100%;
 }

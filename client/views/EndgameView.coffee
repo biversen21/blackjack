@@ -2,7 +2,7 @@ class window.EndgameView extends Backbone.View
 
   className: 'Endgame'
 
-  template: _.template '<div>results</div>'
+  template: _.template '<div id = "<%= results %>"></div>'
 
   events:
     "click": ->
@@ -14,22 +14,7 @@ class window.EndgameView extends Backbone.View
 
   render: ->
 
-    @$el.html @template()
+    @$el.html @template(@model.attributes)
     @$el.prependTo 'body'
 
-      #append to body
 
-  # #todo: switch to mustache
-  # template: _.template '<h2><% if(isDealer){ %>Dealer<% }else{ %>You<% } %> (<span class="score"></span>)</h2>'
-
-  # initialize: ->
-  #   @collection.on 'add remove change', => @render()
-  #   @render()
-  #   @collection.on 'bust', => console.log 'busted view'
-
-  # render: ->
-  #   @$el.children().detach()
-  #   @$el.html @template @collection
-  #   @$el.append @collection.map (card) ->
-  #     new CardView(model: card).$el
-  #   @$('.score').text @collection.scores()[0]

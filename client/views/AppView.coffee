@@ -13,7 +13,7 @@ class window.AppView extends Backbone.View
 
   initialize: ->
     @render()
-    @model.on 'busted', => new EndgameView({model: new Endgame()})
+    @model.on 'busted', => new EndgameView({model: @model.get('endgame')})
 
   render: ->
     @$el.children().detach()
