@@ -5,3 +5,7 @@
   }).$el.appendTo('body');
 
 }).call(this);
+
+
+// endgamemodel = new Endgame()
+// endgameview = new EndgameView({model: endgamemodel})

@@ -8,7 +8,7 @@ class window.Hand extends Backbone.Collection
     if @scores()[0] <22 # or not stand
       @add(@deck.pop()).last()
     if @scores()[0] > 21
-      @trigger('bust',@)
+      @trigger('busted',@)
       alert 'BUSTED! New game?'
     if @isDealer & @scores()[0] < 17
       @hit()
