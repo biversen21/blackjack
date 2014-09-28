@@ -17,7 +17,6 @@ class window.Hand extends Backbone.Collection
   stand: ->
     @trigger 'stood', @
 
-
   scores: ->
     hasAce = @reduce (memo, card) ->
       memo or card.get('value') is 1 and card.get('revealed')
@@ -29,5 +28,9 @@ class window.Hand extends Backbone.Collection
       aceScore = score + 10
     if aceScore < 22 then aceScore else score
 
-
+  checkBJ: ->
+    if @.models[0].get('value') is 1 && @.models[1].get('value') is 10
+      true
+    if @.models[0].get('value') is 10 && @.models[1].get('value') is 1
+      true
 

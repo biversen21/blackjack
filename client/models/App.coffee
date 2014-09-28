@@ -20,8 +20,16 @@ class window.App extends Backbone.Model
       @trigger 'win', @
     @get('dealerHand').on 'stood', =>
       if @get('playerHand').scores() > @get('dealerHand').scores()
+        console.log(@get('playerHand').scores() + ": " + @get('dealerHand').scores())
         @trigger 'win', @
       if @get('playerHand').scores() < @get('dealerHand').scores()
+        console.log(@get('playerHand').scores() + ": " + @get('dealerHand').scores())
         @trigger 'lose', @
       if @get('playerHand').scores() is @get('dealerHand').scores()
         @trigger 'pushed', @
+
+  playerHit: ->
+    if @get('dealerHand').checkBJ()
+      @get('dealerHand').stand()
+    else
+      @get('playerHand').hit()
